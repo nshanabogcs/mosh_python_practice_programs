@@ -1,0 +1,27 @@
+car_started = False
+command = ''
+
+while True:
+    command = input("> ").upper()
+    if command == "START":
+        if car_started:
+            print("Car already started. Start driving now!")
+        else:
+            print("Car started... Ready to go!")
+            car_started = True
+    elif command == "STOP":
+        if not car_started:
+            print("Car stopped already. Take out the keys and go home.")
+        else:
+            car_started = False
+            print("Car stopped.")
+    elif command == "HELP":
+        print("""
+start -> to start the car
+stop  -> to stop the car
+quit  -> to exit the program
+        """)
+    elif command == "QUIT":
+        break
+    else:
+        print("I don't understand that.")
